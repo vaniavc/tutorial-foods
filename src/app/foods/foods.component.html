@@ -1,0 +1,13 @@
+<div class="containerX" *ngIf="selectedFood">
+    <div class="container">
+        <img src="{{selectedFood.image}}" alt="{{selectedFood.image}}" style="height:200px;width:200px;">
+        <p>{{selectedFood.description}}</p>
+    </div>
+</div>
+
+<ul>
+    <li *ngFor="let food of foods" style="list-style-type:none">
+        <!-- <img src="{{food.image}}" alt="{{food.image}}" (click)="onSelectFood(food)" style="height:150px;width:150px;float:left; margin: 20px;"> -->
+        <app-food-detail (selectFood)="showFoodDetails($event)" [food]="food"></app-food-detail>
+    </li>
+</ul>
